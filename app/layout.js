@@ -1,4 +1,11 @@
 import './globals.css'
+import { Comfortaa } from 'next/font/google'
+
+const comfortaa = Comfortaa({
+  weight: ['400', '700'],
+  subsets: ['latin'],
+  variable: "--font-comfortaa",
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -8,7 +15,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${comfortaa.className} mx-48 my-12`}>
+        {children}
+        </body>
     </html>
   )
 }
